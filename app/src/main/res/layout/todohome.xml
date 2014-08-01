@@ -4,11 +4,28 @@
 android:orientation="vertical" android:layout_width="match_parent"
 android:layout_height="match_parent">
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="40px"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:text="+Add New Task"
+        android:layout_toLeftOf="@+id/edit"
+        android:text="+Add"
         android:id="@+id/add"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Edit"
+        android:id="@+id/edit"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/edit"
+        android:text="-Delete"
+        android:id="@+id/delete"/>
+
+
     <ListView
     android:layout_width="match_parent"
     android:layout_height="match_parent"

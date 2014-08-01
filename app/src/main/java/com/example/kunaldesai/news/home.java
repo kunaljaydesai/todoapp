@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.kunaldesai.news.data.TaskDbHelper;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,10 +34,13 @@ public class home extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.todohome);
-
+        toDoInfo.add("hi");
+        toDoInfo.add("hoal");
         //final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        Button addNewTask = (Button) findViewById(R.id.add);
+       /* Button addNewTask = (Button) findViewById(R.id.add);
+        Button edit = (Button) findViewById(R.id.edit);
+        Button delete = (Button) findViewById(R.id.delete);*/
         final ArrayAdapter<String> toDoList =
                 new ArrayAdapter<String>(
                         this,
@@ -46,9 +51,19 @@ public class home extends Activity {
 
         final ListView listView = (ListView) findViewById(R.id.itemList);
         listView.setAdapter(toDoList);
-        addNewTask.bringToFront();
+       /* addNewTask.bringToFront();
+        edit.bringToFront();
+        delete.bringToFront();
+*/
 
-        addNewTask.setOnClickListener(new View.OnClickListener() {
+        listView.setClickable(true);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                  System.out.println("Hi");
+             }
+        });
+       /* addNewTask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 AlertDialog.Builder newTask = new AlertDialog.Builder(home.this, 2);
@@ -62,6 +77,9 @@ public class home extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         toDoInfo.add(taskTitle.getText().toString());
                         toDoList.notifyDataSetChanged();
+                        //TaskDbHelper database = new TaskDbHelper(getApplicationContext(), "taskManager.db", null, 1);
+
+
                     }
                 });
                 newTask.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -73,11 +91,10 @@ public class home extends Activity {
                 newTask.show();
 
 
-
             }
         });
 
-
+*/
 
 
 

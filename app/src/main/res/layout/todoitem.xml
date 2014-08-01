@@ -5,9 +5,15 @@
     android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/individualItem"/>
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:id="@+id/individualItem"/>
+        android:layout_alignParentBottom="true"
+        android:id="@+id/dateItem"/>
     <CheckBox
         android:layout_width="40px"
         android:layout_height="40px"
